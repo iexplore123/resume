@@ -26,7 +26,7 @@ const codec = jsonUrl('lzma');
 export const Page: React.FC = () => {
   const lang = getLanguage();
   const intl = useIntl();
-  const user = getSearchObj().user || 'visiky';
+  const user = getSearchObj().user || 'iexplore123';
 
   const [, mode, changeMode] = useModeSwitcher({});
 
@@ -49,7 +49,7 @@ export const Page: React.FC = () => {
     const searchObj = qs.parse(currentSearch);
     if (!searchObj.template) {
       const search = qs.stringify({
-        template: config?.template || 'template1',
+        template: config?.template || 'template3',
         ...qs.parse(currentSearch),
       });
       window.location.href = `${pathname}?${search}${hash}`;
@@ -251,15 +251,15 @@ export const Page: React.FC = () => {
                       cursor: 'pointer',
                     }}
                     onClick={() => {
-                      const user = query.user || 'visiky';
+                      const user = query.user || 'iexplore123';
                       window.open(`https://github.com/${user}/${user}`);
                     }}
                   >
-                    {`${query.user || 'visiky'}'s resumeInfo`}
+                    {`${query.user || 'iexplore123'}'s resumeInfo`}
                   </span>
                   <span>
-                    {`（https://github.com/${query.user || 'visiky'}/${
-                      query.user || 'visiky'
+                    {`（https://github.com/${query.user || 'iexplore123'}/${
+                      query.user || 'iexplore123'
                     }/blob/${query.branch || 'master'}/resume.json）`}
                   </span>
                 </span>
@@ -274,7 +274,7 @@ export const Page: React.FC = () => {
             <Resume
               value={config}
               theme={theme}
-              template={query.template || 'template1'}
+              template={query.template || 'template3'}
             />
           )}
           {mode === 'edit' && (
@@ -287,7 +287,7 @@ export const Page: React.FC = () => {
                     theme={theme}
                     onThemeChange={onThemeChange}
                     // @ts-ignore
-                    template={query.template || 'template1'}
+                    template={query.template || 'template3'}
                     onTemplateChange={updateTemplate}
                   />
                   <Button type="primary" onClick={copyConfig}>
