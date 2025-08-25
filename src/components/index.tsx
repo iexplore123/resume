@@ -78,7 +78,7 @@ export const Page: React.FC = () => {
   };
 
   useEffect(() => {
-    const user = (query.user || '') as string;
+    const user = (query.user || 'iexplore123') as string;
     const branch = (query.branch || 'master') as string;
     const mode = query.mode;
 
